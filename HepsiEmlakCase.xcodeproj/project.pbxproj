@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		B2F696EB27F077C90032C3F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F696EA27F077C90032C3F4 /* AppDelegate.swift */; };
 		B2F696ED27F077C90032C3F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */; };
-		B2F696EF27F077C90032C3F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F696EE27F077C90032C3F4 /* ViewController.swift */; };
-		B2F696F227F077C90032C3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F696F027F077C90032C3F4 /* Main.storyboard */; };
 		B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F696F327F077CA0032C3F4 /* Assets.xcassets */; };
-		B2F696F727F077CA0032C3F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F696F527F077CA0032C3F4 /* LaunchScreen.storyboard */; };
 		B2F6970227F077CB0032C3F4 /* HepsiEmlakCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6970127F077CB0032C3F4 /* HepsiEmlakCaseTests.swift */; };
 		B2F6970D27F077CB0032C3F4 /* HepsiEmlakCaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6970C27F077CB0032C3F4 /* HepsiEmlakCaseUITests.swift */; };
+		B2F6971D27F0795F0032C3F4 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6971B27F0795F0032C3F4 /* ProductsViewController.swift */; };
+		B2F6971E27F0795F0032C3F4 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6971C27F0795F0032C3F4 /* ProductsViewController.xib */; };
+		B2F6972127F0798A0032C3F4 /* ProductsViewControllerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972027F0798A0032C3F4 /* ProductsViewControllerInteractor.swift */; };
+		B2F6972327F079940032C3F4 /* ProductsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972227F079940032C3F4 /* ProductsViewControllerPresenter.swift */; };
+		B2F6972527F0799E0032C3F4 /* ProductsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972427F0799E0032C3F4 /* ProductsModels.swift */; };
+		B2F6972A27F07B350032C3F4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972927F07B350032C3F4 /* ViewControllerFactory.swift */; };
+		B2F6972D27F07F7E0032C3F4 /* Integer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972C27F07F7E0032C3F4 /* Integer+Extensions.swift */; };
+		B2F6973127F07FDF0032C3F4 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6972F27F07FDF0032C3F4 /* ProductCell.swift */; };
+		B2F6973227F07FDF0032C3F4 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6973027F07FDF0032C3F4 /* ProductCell.xib */; };
+		B2F6973427F080F40032C3F4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973327F080F40032C3F4 /* String+Extensions.swift */; };
+		B2F6973627F0836C0032C3F4 /* CollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */; };
+		B2F6973927F08CA20032C3F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973827F08CA20032C3F4 /* Colors.swift */; };
+		B2F6973B27F08D250032C3F4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +48,7 @@
 		B2F696E727F077C90032C3F4 /* HepsiEmlakCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HepsiEmlakCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F696EA27F077C90032C3F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2F696EE27F077C90032C3F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2F696F127F077C90032C3F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2F696F327F077CA0032C3F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B2F696F627F077CA0032C3F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F696F827F077CA0032C3F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F696FD27F077CB0032C3F4 /* HepsiEmlakCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HepsiEmlakCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F6970127F077CB0032C3F4 /* HepsiEmlakCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiEmlakCaseTests.swift; sourceTree = "<group>"; };
@@ -49,6 +56,19 @@
 		B2F6970827F077CB0032C3F4 /* HepsiEmlakCaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HepsiEmlakCaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F6970C27F077CB0032C3F4 /* HepsiEmlakCaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiEmlakCaseUITests.swift; sourceTree = "<group>"; };
 		B2F6970E27F077CB0032C3F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F6971B27F0795F0032C3F4 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		B2F6971C27F0795F0032C3F4 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
+		B2F6972027F0798A0032C3F4 /* ProductsViewControllerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewControllerInteractor.swift; sourceTree = "<group>"; };
+		B2F6972227F079940032C3F4 /* ProductsViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewControllerPresenter.swift; sourceTree = "<group>"; };
+		B2F6972427F0799E0032C3F4 /* ProductsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModels.swift; sourceTree = "<group>"; };
+		B2F6972927F07B350032C3F4 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		B2F6972C27F07F7E0032C3F4 /* Integer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+Extensions.swift"; sourceTree = "<group>"; };
+		B2F6972F27F07FDF0032C3F4 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		B2F6973027F07FDF0032C3F4 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		B2F6973327F080F40032C3F4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		B2F6973827F08CA20032C3F4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +119,11 @@
 		B2F696E927F077C90032C3F4 /* HepsiEmlakCase */ = {
 			isa = PBXGroup;
 			children = (
-				B2F696EA27F077C90032C3F4 /* AppDelegate.swift */,
-				B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */,
-				B2F696EE27F077C90032C3F4 /* ViewController.swift */,
-				B2F696F027F077C90032C3F4 /* Main.storyboard */,
+				B2F6973727F08C900032C3F4 /* Constants */,
+				B2F6972627F07AC30032C3F4 /* Commons */,
+				B2F6971A27F078D10032C3F4 /* AppAndSceneDelegates */,
+				B2F6971F27F079640032C3F4 /* Screens */,
 				B2F696F327F077CA0032C3F4 /* Assets.xcassets */,
-				B2F696F527F077CA0032C3F4 /* LaunchScreen.storyboard */,
 				B2F696F827F077CA0032C3F4 /* Info.plist */,
 			);
 			path = HepsiEmlakCase;
@@ -126,6 +145,89 @@
 				B2F6970E27F077CB0032C3F4 /* Info.plist */,
 			);
 			path = HepsiEmlakCaseUITests;
+			sourceTree = "<group>";
+		};
+		B2F6971A27F078D10032C3F4 /* AppAndSceneDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				B2F696EA27F077C90032C3F4 /* AppDelegate.swift */,
+				B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */,
+			);
+			path = AppAndSceneDelegates;
+			sourceTree = "<group>";
+		};
+		B2F6971F27F079640032C3F4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6973F27F192C90032C3F4 /* Basket */,
+				B2F6972B27F07F240032C3F4 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B2F6972627F07AC30032C3F4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6972827F07B210032C3F4 /* ViewControllerFactory */,
+				B2F6972727F07AC90032C3F4 /* Extensions */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		B2F6972727F07AC90032C3F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6972C27F07F7E0032C3F4 /* Integer+Extensions.swift */,
+				B2F6973327F080F40032C3F4 /* String+Extensions.swift */,
+				B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */,
+				B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2F6972827F07B210032C3F4 /* ViewControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6972927F07B350032C3F4 /* ViewControllerFactory.swift */,
+			);
+			path = ViewControllerFactory;
+			sourceTree = "<group>";
+		};
+		B2F6972B27F07F240032C3F4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6972E27F07FC50032C3F4 /* Cells */,
+				B2F6971B27F0795F0032C3F4 /* ProductsViewController.swift */,
+				B2F6971C27F0795F0032C3F4 /* ProductsViewController.xib */,
+				B2F6972027F0798A0032C3F4 /* ProductsViewControllerInteractor.swift */,
+				B2F6972227F079940032C3F4 /* ProductsViewControllerPresenter.swift */,
+				B2F6972427F0799E0032C3F4 /* ProductsModels.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2F6972E27F07FC50032C3F4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6972F27F07FDF0032C3F4 /* ProductCell.swift */,
+				B2F6973027F07FDF0032C3F4 /* ProductCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B2F6973727F08C900032C3F4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6973827F08CA20032C3F4 /* Colors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B2F6973F27F192C90032C3F4 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Basket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F696F727F077CA0032C3F4 /* LaunchScreen.storyboard in Resources */,
+				B2F6973227F07FDF0032C3F4 /* ProductCell.xib in Resources */,
 				B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */,
-				B2F696F227F077C90032C3F4 /* Main.storyboard in Resources */,
+				B2F6971E27F0795F0032C3F4 /* ProductsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +360,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F696EF27F077C90032C3F4 /* ViewController.swift in Sources */,
+				B2F6973427F080F40032C3F4 /* String+Extensions.swift in Sources */,
+				B2F6973927F08CA20032C3F4 /* Colors.swift in Sources */,
+				B2F6972527F0799E0032C3F4 /* ProductsModels.swift in Sources */,
+				B2F6972A27F07B350032C3F4 /* ViewControllerFactory.swift in Sources */,
+				B2F6971D27F0795F0032C3F4 /* ProductsViewController.swift in Sources */,
+				B2F6973627F0836C0032C3F4 /* CollectionViewCell+Extensions.swift in Sources */,
 				B2F696EB27F077C90032C3F4 /* AppDelegate.swift in Sources */,
+				B2F6973B27F08D250032C3F4 /* Color+Extensions.swift in Sources */,
+				B2F6972D27F07F7E0032C3F4 /* Integer+Extensions.swift in Sources */,
 				B2F696ED27F077C90032C3F4 /* SceneDelegate.swift in Sources */,
+				B2F6973127F07FDF0032C3F4 /* ProductCell.swift in Sources */,
+				B2F6972327F079940032C3F4 /* ProductsViewControllerPresenter.swift in Sources */,
+				B2F6972127F0798A0032C3F4 /* ProductsViewControllerInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +406,6 @@
 			targetProxy = B2F6970927F077CB0032C3F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B2F696F027F077C90032C3F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2F696F127F077C90032C3F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B2F696F527F077CA0032C3F4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2F696F627F077CA0032C3F4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B2F6970F27F077CB0032C3F4 /* Debug */ = {
@@ -439,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y27HQ7Y4L6;
 				INFOPLIST_FILE = HepsiEmlakCase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y27HQ7Y4L6;
 				INFOPLIST_FILE = HepsiEmlakCase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

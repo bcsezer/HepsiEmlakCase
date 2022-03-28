@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCell" customModule="HepsiEmlakCase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="207" height="221"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="207" height="221"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-3J-rSG">
+                        <rect key="frame" x="0.0" y="0.0" width="207" height="221"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dQM-w7-HAE">
+                                <rect key="frame" x="0.0" y="0.0" width="207" height="136.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dQM-w7-HAE" secondAttribute="height" multiplier="226:149" id="Whm-Tg-ZPA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sS5-zs-8cG">
+                                <rect key="frame" x="10" y="142.5" width="187" height="36.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="730 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-8f-Uxp">
+                                <rect key="frame" x="10" y="187" width="46" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1e-8e-rdg">
+                                <rect key="frame" x="97" y="184" width="100" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="jfD-ax-QWb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Sepete Ekle"/>
+                                <connections>
+                                    <action selector="tapAddToChart:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Lys-Th-bBQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sS5-zs-8cG" firstAttribute="leading" secondItem="xDU-3J-rSG" secondAttribute="leading" constant="10" id="5In-ok-Qig"/>
+                            <constraint firstAttribute="trailing" secondItem="sS5-zs-8cG" secondAttribute="trailing" constant="10" id="8tP-8N-Uta"/>
+                            <constraint firstItem="S1e-8e-rdg" firstAttribute="top" secondItem="sS5-zs-8cG" secondAttribute="bottom" constant="5" id="DNi-wa-rzW"/>
+                            <constraint firstAttribute="bottom" secondItem="S1e-8e-rdg" secondAttribute="bottom" constant="8" id="E0n-hO-xJ1"/>
+                            <constraint firstAttribute="trailing" secondItem="dQM-w7-HAE" secondAttribute="trailing" id="FSv-YY-UKP"/>
+                            <constraint firstItem="sS5-zs-8cG" firstAttribute="top" secondItem="dQM-w7-HAE" secondAttribute="bottom" constant="6" id="Kcs-ag-n9r"/>
+                            <constraint firstItem="dQM-w7-HAE" firstAttribute="top" secondItem="xDU-3J-rSG" secondAttribute="top" id="V1Y-RI-rh6"/>
+                            <constraint firstItem="dQM-w7-HAE" firstAttribute="leading" secondItem="xDU-3J-rSG" secondAttribute="leading" id="ZZc-aF-B8t"/>
+                            <constraint firstItem="J0x-8f-Uxp" firstAttribute="leading" secondItem="xDU-3J-rSG" secondAttribute="leading" constant="10" id="aQJ-Px-O4w"/>
+                            <constraint firstAttribute="bottom" secondItem="J0x-8f-Uxp" secondAttribute="bottom" constant="12" id="hb1-Va-sxl"/>
+                            <constraint firstAttribute="trailing" secondItem="S1e-8e-rdg" secondAttribute="trailing" constant="10" id="ro6-Wq-BSe"/>
+                            <constraint firstItem="J0x-8f-Uxp" firstAttribute="top" secondItem="sS5-zs-8cG" secondAttribute="bottom" constant="8" id="zkj-O6-Jwh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="xDU-3J-rSG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AR9-D0-u27"/>
+                <constraint firstAttribute="bottom" secondItem="xDU-3J-rSG" secondAttribute="bottom" id="I7Z-l6-86A"/>
+                <constraint firstItem="xDU-3J-rSG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dai-hh-Kqo"/>
+                <constraint firstAttribute="trailing" secondItem="xDU-3J-rSG" secondAttribute="trailing" id="vcf-Nf-77J"/>
+            </constraints>
+            <size key="customSize" width="175" height="157"/>
+            <connections>
+                <outlet property="addToChartButton" destination="S1e-8e-rdg" id="hlu-Ev-zMc"/>
+                <outlet property="containerView" destination="xDU-3J-rSG" id="cpZ-lI-LdJ"/>
+                <outlet property="productDescLabel" destination="sS5-zs-8cG" id="5d2-av-Y4t"/>
+                <outlet property="productImage" destination="dQM-w7-HAE" id="xaC-r0-1XU"/>
+                <outlet property="productPriceLabel" destination="J0x-8f-Uxp" id="gkG-5N-yxE"/>
+            </connections>
+            <point key="canvasLocation" x="227.536231884058" y="145.64732142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
