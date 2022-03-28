@@ -38,7 +38,8 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
 
 extension ProductsViewController: ProductCellDelegate {
     func didTapAddToChart() {
-        print("Click Add To Chart")
+        let vc = BasketViewController.loadFromNib()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

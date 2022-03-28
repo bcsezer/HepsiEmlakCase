@@ -19,7 +19,7 @@ extension UICollectionViewCell {
     
         /**
      Registers cell automatically to given tableview.
-     - parameter tableView: `UITableView`
+     - parameter collectionView: `UICollectionView`
      */
     static func registerWithNib(to collectionView: UICollectionView?) {
         collectionView?.register(UINib(nibName: identifier(), bundle: nil), forCellWithReuseIdentifier: identifier())

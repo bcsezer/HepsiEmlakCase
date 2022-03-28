@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDelegate {
 
     var window: UIWindow?
 
@@ -17,7 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewControllerFactory.sharedInstance.makeProductsViewController()
+        let navigationController = UINavigationController(
+            rootViewController: ViewControllerFactory.sharedInstance.makeProductsViewController()
+        )
+        navigationController.isNavigationBarHidden = true
+        navigationController.interactivePopGestureRecognizer?.delegate = self
+        navigationController.interactivePopGestureRecognizer?.isEnabled = true
+        window.rootViewController = navigationController
+        
         self.window = window
         window.makeKeyAndVisible()
     }

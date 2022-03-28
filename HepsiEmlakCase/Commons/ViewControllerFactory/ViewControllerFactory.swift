@@ -10,6 +10,7 @@ import UIKit
 
 protocol ViewControllerFactoryProtocol {
     func makeProductsViewController() -> UIViewController
+    func makeBasketViewController() -> UIViewController
 }
 
 struct ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -19,6 +20,16 @@ struct ViewControllerFactory: ViewControllerFactoryProtocol {
         let viewController = ProductsViewController(nibName: "ProductsViewController", bundle: nil)
         let interactor = ProductsViewControllerInteractor()
         let presenter = ProductsViewControllerPresenter()
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        viewController.interactor = interactor
+        return viewController
+    }
+    
+    func makeBasketViewController() -> UIViewController {
+        let viewController = BasketViewController(nibName: "BasketViewController", bundle: nil)
+        let interactor = BasketViewInteractor()
+        let presenter = BasketViewPresenter()
         interactor.presenter = presenter
         presenter.viewController = viewController
         viewController.interactor = interactor

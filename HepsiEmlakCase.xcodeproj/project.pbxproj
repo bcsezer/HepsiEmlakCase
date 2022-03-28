@@ -25,6 +25,17 @@
 		B2F6973627F0836C0032C3F4 /* CollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */; };
 		B2F6973927F08CA20032C3F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973827F08CA20032C3F4 /* Colors.swift */; };
 		B2F6973B27F08D250032C3F4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */; };
+		B2F6974427F1D8820032C3F4 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974227F1D8820032C3F4 /* BasketViewController.swift */; };
+		B2F6974527F1D8820032C3F4 /* BasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6974327F1D8820032C3F4 /* BasketViewController.xib */; };
+		B2F6974727F1DA4C0032C3F4 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974627F1DA4C0032C3F4 /* ViewController+Extensions.swift */; };
+		B2F6974927F1E1700032C3F4 /* BasketViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974827F1E1700032C3F4 /* BasketViewInteractor.swift */; };
+		B2F6974B27F1E1790032C3F4 /* BasketViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974A27F1E1790032C3F4 /* BasketViewPresenter.swift */; };
+		B2F6974D27F1E1860032C3F4 /* BasketViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974C27F1E1860032C3F4 /* BasketViewModels.swift */; };
+		B2F6975227F1E5E70032C3F4 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975027F1E5E70032C3F4 /* BasketCell.swift */; };
+		B2F6975327F1E5E70032C3F4 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6975127F1E5E70032C3F4 /* BasketCell.xib */; };
+		B2F6975627F1E5FB0032C3F4 /* BasketHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */; };
+		B2F6975727F1E5FB0032C3F4 /* BasketHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */; };
+		B2F6975927F1F1BE0032C3F4 /* TableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +80,17 @@
 		B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		B2F6973827F08CA20032C3F4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B2F6974227F1D8820032C3F4 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		B2F6974327F1D8820032C3F4 /* BasketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketViewController.xib; sourceTree = "<group>"; };
+		B2F6974627F1DA4C0032C3F4 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B2F6974827F1E1700032C3F4 /* BasketViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewInteractor.swift; sourceTree = "<group>"; };
+		B2F6974A27F1E1790032C3F4 /* BasketViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewPresenter.swift; sourceTree = "<group>"; };
+		B2F6974C27F1E1860032C3F4 /* BasketViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModels.swift; sourceTree = "<group>"; };
+		B2F6975027F1E5E70032C3F4 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		B2F6975127F1E5E70032C3F4 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
+		B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketHeaderCell.swift; sourceTree = "<group>"; };
+		B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketHeaderCell.xib; sourceTree = "<group>"; };
+		B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +141,7 @@
 		B2F696E927F077C90032C3F4 /* HepsiEmlakCase */ = {
 			isa = PBXGroup;
 			children = (
+				B2F6974E27F1E18D0032C3F4 /* Data */,
 				B2F6973727F08C900032C3F4 /* Constants */,
 				B2F6972627F07AC30032C3F4 /* Commons */,
 				B2F6971A27F078D10032C3F4 /* AppAndSceneDelegates */,
@@ -181,6 +204,8 @@
 				B2F6973327F080F40032C3F4 /* String+Extensions.swift */,
 				B2F6973527F0836C0032C3F4 /* CollectionViewCell+Extensions.swift */,
 				B2F6973A27F08D250032C3F4 /* Color+Extensions.swift */,
+				B2F6974627F1DA4C0032C3F4 /* ViewController+Extensions.swift */,
+				B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,8 +251,32 @@
 		B2F6973F27F192C90032C3F4 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				B2F6974F27F1E5C80032C3F4 /* Cells */,
+				B2F6974227F1D8820032C3F4 /* BasketViewController.swift */,
+				B2F6974327F1D8820032C3F4 /* BasketViewController.xib */,
+				B2F6974827F1E1700032C3F4 /* BasketViewInteractor.swift */,
+				B2F6974A27F1E1790032C3F4 /* BasketViewPresenter.swift */,
+				B2F6974C27F1E1860032C3F4 /* BasketViewModels.swift */,
 			);
 			path = Basket;
+			sourceTree = "<group>";
+		};
+		B2F6974E27F1E18D0032C3F4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B2F6974F27F1E5C80032C3F4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6975027F1E5E70032C3F4 /* BasketCell.swift */,
+				B2F6975127F1E5E70032C3F4 /* BasketCell.xib */,
+				B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */,
+				B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +382,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F6975327F1E5E70032C3F4 /* BasketCell.xib in Resources */,
 				B2F6973227F07FDF0032C3F4 /* ProductCell.xib in Resources */,
+				B2F6975727F1E5FB0032C3F4 /* BasketHeaderCell.xib in Resources */,
 				B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */,
+				B2F6974527F1D8820032C3F4 /* BasketViewController.xib in Resources */,
 				B2F6971E27F0795F0032C3F4 /* ProductsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,11 +412,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F6975627F1E5FB0032C3F4 /* BasketHeaderCell.swift in Sources */,
 				B2F6973427F080F40032C3F4 /* String+Extensions.swift in Sources */,
+				B2F6975227F1E5E70032C3F4 /* BasketCell.swift in Sources */,
 				B2F6973927F08CA20032C3F4 /* Colors.swift in Sources */,
+				B2F6974427F1D8820032C3F4 /* BasketViewController.swift in Sources */,
 				B2F6972527F0799E0032C3F4 /* ProductsModels.swift in Sources */,
+				B2F6974D27F1E1860032C3F4 /* BasketViewModels.swift in Sources */,
 				B2F6972A27F07B350032C3F4 /* ViewControllerFactory.swift in Sources */,
+				B2F6974927F1E1700032C3F4 /* BasketViewInteractor.swift in Sources */,
 				B2F6971D27F0795F0032C3F4 /* ProductsViewController.swift in Sources */,
+				B2F6975927F1F1BE0032C3F4 /* TableView+Extensions.swift in Sources */,
+				B2F6974B27F1E1790032C3F4 /* BasketViewPresenter.swift in Sources */,
 				B2F6973627F0836C0032C3F4 /* CollectionViewCell+Extensions.swift in Sources */,
 				B2F696EB27F077C90032C3F4 /* AppDelegate.swift in Sources */,
 				B2F6973B27F08D250032C3F4 /* Color+Extensions.swift in Sources */,
@@ -372,6 +431,7 @@
 				B2F696ED27F077C90032C3F4 /* SceneDelegate.swift in Sources */,
 				B2F6973127F07FDF0032C3F4 /* ProductCell.swift in Sources */,
 				B2F6972327F079940032C3F4 /* ProductsViewControllerPresenter.swift in Sources */,
+				B2F6974727F1DA4C0032C3F4 /* ViewController+Extensions.swift in Sources */,
 				B2F6972127F0798A0032C3F4 /* ProductsViewControllerInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
