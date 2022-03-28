@@ -1,0 +1,6 @@
+framework module Pods_HepsiEmlakCase_HepsiEmlakCaseUITests {
+  umbrella header "Pods-HepsiEmlakCase-HepsiEmlakCaseUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
