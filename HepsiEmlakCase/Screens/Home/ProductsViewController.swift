@@ -18,6 +18,14 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private struct Constant {
+        static let extraSpacesForCell: CGFloat = 24.0
+        static let cellHeight: CGFloat = 221.0
+        static let cellEdges: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        static let minimumLineSpacingForSection: CGFloat = 8.0
+        static let minimumInteritemSpacingForSectionAt: CGFloat = 1.0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
@@ -38,8 +46,8 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
 
 extension ProductsViewController: ProductCellDelegate {
     func didTapAddToChart() {
-        let vc = BasketViewController.loadFromNib()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let basketVC = ViewControllerFactory.sharedInstance.makeBasketViewController()
+        self.navigationController?.pushViewController(basketVC, animated: true)
     }
 }
 
@@ -62,7 +70,10 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: (collectionView.frame.width - 24) / 2, height: CGFloat(221))
+        return CGSize(
+            width: (collectionView.frame.width - Constant.extraSpacesForCell) / 2,
+            height: Constant.cellHeight
+        )
     }
     
     func collectionView(
@@ -70,7 +81,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
     ) -> UIEdgeInsets {
-        UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        Constant.cellEdges
     }
     
     func collectionView(
@@ -78,7 +89,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int
     ) -> CGFloat {
-        CGFloat(8)
+        return Constant.minimumLineSpacingForSection
     }
     
     func collectionView(
@@ -86,6 +97,6 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int
     ) -> CGFloat {
-       return CGFloat(1)
+        return Constant.minimumInteritemSpacingForSectionAt
     }
 }
