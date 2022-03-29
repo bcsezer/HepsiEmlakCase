@@ -26,7 +26,7 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DRm-DI-Lno">
                     <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPZ-hC-2ZP" userLabel="bannerView">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -69,7 +69,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="DRm-DI-Lno" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0bX-Wu-z1h"/>
                 <constraint firstItem="VPZ-hC-2ZP" firstAttribute="top" secondItem="VmS-3b-EVO" secondAttribute="bottom" id="5Hj-3T-hD7"/>
@@ -90,11 +90,11 @@
     </objects>
     <resources>
         <image name="backButton" width="12" height="21"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

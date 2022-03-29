@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ProductCellDelegate: AnyObject {
     func didTapAddToChart()
@@ -23,8 +24,8 @@ class ProductCell: UICollectionViewCell {
     weak var delegate: ProductCellDelegate?
     
     private struct Constants {
-        static let borderWitdh: CGFloat = 1.0
-        static let cornerRadious: CGFloat = 3.0
+        static let borderWitdh: CGFloat = 0.5
+        static let cornerRadious: CGFloat = 4.0
     }
     
     override func awakeFromNib() {
@@ -34,20 +35,46 @@ class ProductCell: UICollectionViewCell {
     
     func willDisplay(data: ProductsModels.Product) {
         self.productDescLabel.text = data.name
-        self.productImage.image = UIImage()
-        self.productPriceLabel.text = data.price
+        self.productImage.setImage(imgUrl: data.image ?? "")
+        self.productPriceLabel.text = "\(data.price ?? "") \(data.currency ?? "")"
     }
     
     private func apperance() {
-        containerView.layer.borderWidth = Constants.borderWitdh
-        containerView.layer.borderColor = Colors.productCellBorderColor.cgColor
-        containerView.layer.cornerRadius = Constants.cornerRadious
+        containerView.style(
+            style: ViewStyle(
+                backgroundColor: .white,
+                tintColor: nil,
+                layerStyle: ViewStyle.LayerStyle(
+                    masksToBounds: true,
+                    cornerRadius: Constants.cornerRadious,
+                    borderStyle: ViewStyle.LayerStyle.BorderStyle(
+                        color: Colors.productCellBorderColor,
+                        width: Constants.borderWitdh
+                    )
+                )
+            )
+        )
         
-        addToChartButton.layer.borderWidth = Constants.borderWitdh
-        addToChartButton.layer.cornerRadius = Constants.cornerRadious
-        addToChartButton.layer.borderColor = Colors.chartButtonBorderColor.cgColor
-        addToChartButton.layer.backgroundColor = Colors.orange.cgColor
-        addToChartButton.setTitleColor(Colors.white, for: .normal)
+        addToChartButton.style(
+            style: ViewStyle(
+                backgroundColor: Colors.orange,
+                tintColor: nil,
+                layerStyle: ViewStyle.LayerStyle(
+                    masksToBounds: true,
+                    cornerRadius: Constants.cornerRadious,
+                    borderStyle: ViewStyle.LayerStyle.BorderStyle(
+                        color: Colors.chartButtonBorderColor,
+                        width: Constants.borderWitdh)
+                )
+            )
+        )
+        
+        addToChartButton.style(
+            style: TextStyle(
+                font: UIFont.systemFont(ofSize: 12),
+                color: Colors.white
+            )
+        )
     }
     
     @IBAction func tapAddToChart(_ sender: UIButton) {

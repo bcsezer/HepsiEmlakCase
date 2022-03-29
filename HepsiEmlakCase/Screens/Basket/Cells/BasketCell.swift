@@ -36,8 +36,20 @@ class BasketCell: UITableViewCell {
     }
     
     private func apperance() {
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = Colors.productCellBorderColor.cgColor
+        containerView.style(
+            style: ViewStyle(
+                backgroundColor: .white,
+                tintColor: nil,
+                layerStyle: ViewStyle.LayerStyle(
+                    masksToBounds: true,
+                    cornerRadius: 4.0,
+                    borderStyle: ViewStyle.LayerStyle.BorderStyle(
+                        color: Colors.productCellBorderColor,
+                        width: 0.5
+                    )
+                )
+            )
+        )
     }
     
     @IBAction func tapRemove(_ sender: UIButton) {

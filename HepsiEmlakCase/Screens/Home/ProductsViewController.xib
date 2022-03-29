@@ -46,7 +46,7 @@
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gMn-Q4-ldy">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4C5-Qe-3Oh">
                                 <size key="itemSize" width="0.0" height="0.0"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -65,7 +65,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="OPn-jy-N6d" secondAttribute="trailing" id="048-W3-zhx"/>
                 <constraint firstItem="rqZ-YF-2wz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BSh-YG-7sa"/>
@@ -85,6 +85,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

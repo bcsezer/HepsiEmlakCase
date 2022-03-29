@@ -13,6 +13,7 @@ protocol BasketViewDisplayLogic {
 
 class BasketViewController: UIViewController, BasketViewDisplayLogic {
     var interactor: BasketViewBusinessLogic?
+    var router: BasketRoutingLogic?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,7 +29,7 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     }
     
     @IBAction func TapBackButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        router?.routeToBack()
     }
 }
 

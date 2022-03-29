@@ -19,14 +19,29 @@ enum ProductsModels {
     }
     
     enum GetProducts {
-        struct Request {
-            let test: String
-        }
+        struct Request { }
         struct Response {
-            let test: String
+            let products: [ProductEntity]
         }
         struct ViewModel {
-            let test: String
+            let cell: [Cell]
+        }
+    }
+    
+    enum EmptyResult {
+        struct Response {
+            let message: String
+        }
+        struct ViewModel {
+            let message: String
+        }
+    }
+    
+    enum TapAddToChart {
+        struct Request { }
+        struct Response { }
+        struct ViewModel {
+            let message: String
         }
     }
     

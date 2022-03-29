@@ -18,11 +18,15 @@ struct ViewControllerFactory: ViewControllerFactoryProtocol {
     
     func makeProductsViewController() -> UIViewController {
         let viewController = ProductsViewController(nibName: "ProductsViewController", bundle: nil)
-        let interactor = ProductsViewControllerInteractor()
-        let presenter = ProductsViewControllerPresenter()
+        let interactor = ProductsInteractor()
+        let presenter = ProductsPresenter()
+        let router = ProductsRouter()
         interactor.presenter = presenter
         presenter.viewController = viewController
         viewController.interactor = interactor
+        router.viewController = viewController
+        viewController.router = router
+        
         return viewController
     }
     
@@ -30,9 +34,13 @@ struct ViewControllerFactory: ViewControllerFactoryProtocol {
         let viewController = BasketViewController(nibName: "BasketViewController", bundle: nil)
         let interactor = BasketViewInteractor()
         let presenter = BasketViewPresenter()
+        let router = BasketRouter()
         interactor.presenter = presenter
         presenter.viewController = viewController
         viewController.interactor = interactor
+        viewController.router = router
+        router.viewController = viewController
+    
         return viewController
     }
 }

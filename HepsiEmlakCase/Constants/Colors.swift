@@ -12,4 +12,5 @@ struct Colors {
     static let orange = UIColor(rgb: 0xFE4100)
     static let chartButtonBorderColor = UIColor(rgb: 0xD63211)
     static let white = UIColor(rgb: 0xFFFFFF)
+    static let red = UIColor(rgb: 0xFE3C30)
 }
