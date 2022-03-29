@@ -11,6 +11,7 @@ protocol ProductsViewDisplayLogic {
     func display(viewModel: ProductsModels.GetProducts.ViewModel)
     func display(viewModel: ProductsModels.TapAddToChart.ViewModel)
     func display(viewModel: ProductsModels.EmptyResult.ViewModel)
+    func display(viewModel: ProductsModels.ProductExistError.ViewModel)
 }
 
 class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
@@ -20,6 +21,7 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
     var router: ProductsRoutingLogic?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var cartButton: UIButton!
     
     let loading = ActivityManagerView()
     let activityIndicator = UIActivityIndicatorView()
@@ -56,19 +58,32 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
     }
     
     func display(viewModel: ProductsModels.TapAddToChart.ViewModel) {
-        ToastMessage.show(viewModel.message, align: .top(50))
-        router?.routeToChart()
+        if viewModel.isOutOfStock {
+            showAlert(withTitle: "Uyarı", withMessage: viewModel.message)
+        } else {
+            ToastMessage.show(viewModel.message, align: .top(50))
+            router?.routeToChart()
+        }
+    }
+    
+    func display(viewModel: ProductsModels.ProductExistError.ViewModel) {
+        showAlert(withTitle: "Uyarı", withMessage: viewModel.message)
     }
     
     func display(viewModel: ProductsModels.EmptyResult.ViewModel) {
         activityIndicator.stopAnimating()
-        print(viewModel.message)
+        showAlert(withTitle: "Uyarı", withMessage: viewModel.message)
     }
+    
+    @IBAction func tapToChart(_ sender: Any) {
+        router?.routeToChart()
+    }
+    
 }
 
 extension ProductsViewController: ProductCellDelegate {
-    func didTapAddToChart() {
-        interactor?.handle(request: ProductsModels.TapAddToChart.Request())
+    func didTapAddToChart(data: ProductsModels.Product) {
+        interactor?.handle(request: ProductsModels.TapAddToChart.Request(selectedProduct: data))
     }
 }
 

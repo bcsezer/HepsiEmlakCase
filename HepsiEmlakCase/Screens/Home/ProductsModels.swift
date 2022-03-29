@@ -14,7 +14,6 @@ enum ProductsModels {
         let id: Int?
         let name: String?
         let price: String?
-        let currency: String?
         let image: String?
     }
     
@@ -37,10 +36,24 @@ enum ProductsModels {
         }
     }
     
-    enum TapAddToChart {
-        struct Request { }
-        struct Response { }
+    enum ProductExistError {
+        struct Response {
+            let message: String
+        }
         struct ViewModel {
+            let message: String
+        }
+    }
+    
+    enum TapAddToChart {
+        struct Request {
+            let selectedProduct: Product
+        }
+        struct Response {
+            let id: Int
+        }
+        struct ViewModel {
+            let isOutOfStock: Bool
             let message: String
         }
     }

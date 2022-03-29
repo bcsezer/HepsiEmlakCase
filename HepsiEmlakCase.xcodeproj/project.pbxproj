@@ -36,8 +36,6 @@
 		B2F6974D27F1E1860032C3F4 /* BasketViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6974C27F1E1860032C3F4 /* BasketViewModels.swift */; };
 		B2F6975227F1E5E70032C3F4 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975027F1E5E70032C3F4 /* BasketCell.swift */; };
 		B2F6975327F1E5E70032C3F4 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6975127F1E5E70032C3F4 /* BasketCell.xib */; };
-		B2F6975627F1E5FB0032C3F4 /* BasketHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */; };
-		B2F6975727F1E5FB0032C3F4 /* BasketHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */; };
 		B2F6975927F1F1BE0032C3F4 /* TableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */; };
 		B2F6975B27F237050032C3F4 /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975A27F237050032C3F4 /* ImageView+Extensions.swift */; };
 		B2F6975D27F23FC10032C3F4 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6975C27F23FC10032C3F4 /* ProductsRouter.swift */; };
@@ -57,6 +55,9 @@
 		B2F6978E27F31A2E0032C3F4 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6978D27F31A2E0032C3F4 /* Styles.swift */; };
 		B2F6979127F31B450032C3F4 /* StylesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979027F31B450032C3F4 /* StylesHelper.swift */; };
 		B2F6979627F32A820032C3F4 /* ActivityManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979527F32A820032C3F4 /* ActivityManagerView.swift */; };
+		B2F6979827F3794A0032C3F4 /* BasketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979727F3794A0032C3F4 /* BasketEntity.swift */; };
+		B2F6979A27F379DD0032C3F4 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979927F379DD0032C3F4 /* Keys.swift */; };
+		B2F6979C27F397F10032C3F4 /* Userdefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979B27F397F10032C3F4 /* Userdefaults+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +114,6 @@
 		B2F6974C27F1E1860032C3F4 /* BasketViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModels.swift; sourceTree = "<group>"; };
 		B2F6975027F1E5E70032C3F4 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		B2F6975127F1E5E70032C3F4 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
-		B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketHeaderCell.swift; sourceTree = "<group>"; };
-		B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketHeaderCell.xib; sourceTree = "<group>"; };
 		B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extensions.swift"; sourceTree = "<group>"; };
 		B2F6975A27F237050032C3F4 /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		B2F6975C27F23FC10032C3F4 /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
@@ -134,6 +133,9 @@
 		B2F6978D27F31A2E0032C3F4 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		B2F6979027F31B450032C3F4 /* StylesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesHelper.swift; sourceTree = "<group>"; };
 		B2F6979527F32A820032C3F4 /* ActivityManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManagerView.swift; sourceTree = "<group>"; };
+		B2F6979727F3794A0032C3F4 /* BasketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEntity.swift; sourceTree = "<group>"; };
+		B2F6979927F379DD0032C3F4 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B2F6979B27F397F10032C3F4 /* Userdefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Extensions.swift"; sourceTree = "<group>"; };
 		B3F4FEC9FDA5D2C205F47B9D /* Pods-HepsiEmlakCaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCaseTests.release.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCaseTests/Pods-HepsiEmlakCaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C5EE11C974428D7F8F659263 /* Pods-HepsiEmlakCaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCaseTests.debug.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCaseTests/Pods-HepsiEmlakCaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C607A749A688737BCA6B71E8 /* Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				B2F6974627F1DA4C0032C3F4 /* ViewController+Extensions.swift */,
 				B2F6975827F1F1BE0032C3F4 /* TableView+Extensions.swift */,
 				B2F6975A27F237050032C3F4 /* ImageView+Extensions.swift */,
+				B2F6979B27F397F10032C3F4 /* Userdefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				B2F6973827F08CA20032C3F4 /* Colors.swift */,
 				B2F6976827F259D50032C3F4 /* Images.swift */,
 				B2F6978627F316920032C3F4 /* Urls.swift */,
+				B2F6979927F379DD0032C3F4 /* Keys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -349,8 +353,6 @@
 			children = (
 				B2F6975027F1E5E70032C3F4 /* BasketCell.swift */,
 				B2F6975127F1E5E70032C3F4 /* BasketCell.xib */,
-				B2F6975427F1E5FB0032C3F4 /* BasketHeaderCell.swift */,
-				B2F6975527F1E5FB0032C3F4 /* BasketHeaderCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F6978827F3175E0032C3F4 /* RemoteEntities.swift */,
+				B2F6979727F3794A0032C3F4 /* BasketEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -547,7 +550,6 @@
 			files = (
 				B2F6975327F1E5E70032C3F4 /* BasketCell.xib in Resources */,
 				B2F6973227F07FDF0032C3F4 /* ProductCell.xib in Resources */,
-				B2F6975727F1E5FB0032C3F4 /* BasketHeaderCell.xib in Resources */,
 				B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */,
 				B2F6974527F1D8820032C3F4 /* BasketViewController.xib in Resources */,
 				B2F6971E27F0795F0032C3F4 /* ProductsViewController.xib in Resources */,
@@ -679,7 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F6975B27F237050032C3F4 /* ImageView+Extensions.swift in Sources */,
-				B2F6975627F1E5FB0032C3F4 /* BasketHeaderCell.swift in Sources */,
+				B2F6979C27F397F10032C3F4 /* Userdefaults+Extensions.swift in Sources */,
 				B2F6978E27F31A2E0032C3F4 /* Styles.swift in Sources */,
 				B2F6973427F080F40032C3F4 /* String+Extensions.swift in Sources */,
 				B2F6979627F32A820032C3F4 /* ActivityManagerView.swift in Sources */,
@@ -692,12 +694,14 @@
 				B2F6977127F265B90032C3F4 /* ToastMessage.swift in Sources */,
 				B2F6978127F2735C0032C3F4 /* RemoteEndpoint.swift in Sources */,
 				B2F6972527F0799E0032C3F4 /* ProductsModels.swift in Sources */,
+				B2F6979A27F379DD0032C3F4 /* Keys.swift in Sources */,
 				B2F6974D27F1E1860032C3F4 /* BasketViewModels.swift in Sources */,
 				B2F6972A27F07B350032C3F4 /* ViewControllerFactory.swift in Sources */,
 				B2F6979127F31B450032C3F4 /* StylesHelper.swift in Sources */,
 				B2F6975D27F23FC10032C3F4 /* ProductsRouter.swift in Sources */,
 				B2F6978927F3175E0032C3F4 /* RemoteEntities.swift in Sources */,
 				B2F6974927F1E1700032C3F4 /* BasketViewInteractor.swift in Sources */,
+				B2F6979827F3794A0032C3F4 /* BasketEntity.swift in Sources */,
 				B2F6977C27F272FE0032C3F4 /* RemoteEncoder.swift in Sources */,
 				B2F6971D27F0795F0032C3F4 /* ProductsViewController.swift in Sources */,
 				B2F6975927F1F1BE0032C3F4 /* TableView+Extensions.swift in Sources */,

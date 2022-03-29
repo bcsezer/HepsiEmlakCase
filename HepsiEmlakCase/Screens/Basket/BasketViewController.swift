@@ -9,6 +9,7 @@ import UIKit
 
 protocol BasketViewDisplayLogic {
     func display(viewModel: BasketViewModels.GetBasketList.ViewModel)
+    func display(viewModel: BasketViewModels.TapRemove.ViewModel)
 }
 
 class BasketViewController: UIViewController, BasketViewDisplayLogic {
@@ -16,6 +17,13 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     var router: BasketRoutingLogic?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var myBasketTitle: UILabel!
+    
+    var basketItems: [BasketViewModels.BasketViewCell] = []
+    
+    private struct Constant {
+        static let heightForRow: CGFloat = 147.0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +32,23 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
         tableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.handle(request: BasketViewModels.GetBasketList.Request())
+    }
+    
     func display(viewModel: BasketViewModels.GetBasketList.ViewModel) {
+        self.basketItems = viewModel.cell
+        myBasketTitle.text = "Sepetim (\(basketItems.count))"
+        self.tableView.reloadData()
+    }
+    
+    func display(viewModel: BasketViewModels.TapRemove.ViewModel) {
+        self.basketItems.remove(at: viewModel.indexPath.row)
+        myBasketTitle.text = "Sepetim (\(basketItems.count))"
         
+        self.tableView.deleteRows(at: [viewModel.indexPath], with: .fade)
+        tableView.reloadData()
     }
     
     @IBAction func TapBackButton(_ sender: UIButton) {
@@ -34,17 +57,38 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
 }
 
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        basketItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BasketCell.identifier, for: indexPath) as? BasketCell
-        return cell ?? UITableViewCell()
+        
+        let row = basketItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.identifier())
+        
+        switch row {
+        case .basketCell(let data):
+            guard let cell = cell as? BasketCell else { return UITableViewCell() }
+            cell.willDisplay(data: data)
+            cell.delegate = self
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 142.0
+        let row = basketItems[indexPath.row]
+        
+        switch row {
+        case .basketCell:
+            return Constant.heightForRow
+        }
+    }
+}
+
+extension BasketViewController: BasketCellDelegate {
+    func didPressRemove(index: Int, Id: Int) {
+        interactor?.handle(request: BasketViewModels.TapRemove.Request(index: index, id: Id))
     }
 }
 

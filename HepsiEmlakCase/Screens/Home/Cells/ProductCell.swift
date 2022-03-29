@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 protocol ProductCellDelegate: AnyObject {
-    func didTapAddToChart()
+    func didTapAddToChart(data: ProductsModels.Product)
 }
 
 class ProductCell: UICollectionViewCell {
@@ -23,6 +23,8 @@ class ProductCell: UICollectionViewCell {
     
     weak var delegate: ProductCellDelegate?
     
+    private var product: ProductsModels.Product?
+    
     private struct Constants {
         static let borderWitdh: CGFloat = 0.5
         static let cornerRadious: CGFloat = 4.0
@@ -33,10 +35,23 @@ class ProductCell: UICollectionViewCell {
         apperance()
     }
     
+    private var id: Int?
+    
     func willDisplay(data: ProductsModels.Product) {
         self.productDescLabel.text = data.name
-        self.productImage.setImage(imgUrl: data.image ?? "")
-        self.productPriceLabel.text = "\(data.price ?? "") \(data.currency ?? "")"
+        self.productPriceLabel.text = data.price
+        self.id = data.id ?? 0
+        
+        guard let imageUrl = data.image else {
+            self.productImage.image = UIImage(named: "no-image")
+            return
+        }
+        self.productImage.setImage(imgUrl: imageUrl)
+        loadProduct(data: data)
+    }
+    
+    private func loadProduct(data: ProductsModels.Product) {
+        self.product = data
     }
     
     private func apperance() {
@@ -78,6 +93,9 @@ class ProductCell: UICollectionViewCell {
     }
     
     @IBAction func tapAddToChart(_ sender: UIButton) {
-        delegate?.didTapAddToChart()
+        guard let selectedProduct = product else {
+            return
+        }
+        delegate?.didTapAddToChart(data: selectedProduct)
     }
 }

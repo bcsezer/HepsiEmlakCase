@@ -9,26 +9,45 @@ import Foundation
 
 enum BasketViewModels {
     
+    struct BasketModel {
+        let id: Int
+        let name: String
+        let price: String
+        let image: String
+        let index: Int
+    }
+    
     enum GetBasketList {
         struct Request {
         }
         struct Response {
+            let basket: [BasketEntity]
         }
         struct ViewModel {
             let cell: [BasketViewCell]
         }
     }
     
+    enum TapRemove {
+        struct Request {
+            let index: Int
+            let id: Int
+        }
+        struct Response {
+            let index: Int
+        }
+        struct ViewModel {
+            let indexPath: IndexPath
+        }
+    }
+    
     enum BasketViewCell {
-        case headerCell
-        case basketCell
+        case basketCell(BasketModel)
         
         func identifier() -> String {
             switch self {
-            case.headerCell:
-                return BasketCell.identifier
             case .basketCell:
-                return BasketHeaderCell.identifier
+                return BasketCell.identifier
             }
         }
     }

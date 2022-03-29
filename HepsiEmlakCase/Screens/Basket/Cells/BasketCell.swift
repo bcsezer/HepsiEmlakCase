@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BasketCellDelegate: AnyObject {
-    func didPressRemove()
+    func didPressRemove(index: Int, Id: Int)
 }
 
 class BasketCell: UITableViewCell {
@@ -25,14 +25,20 @@ class BasketCell: UITableViewCell {
     
     weak var delegate: BasketCellDelegate?
     
+    private var index: Int?
+    private var id: Int?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         apperance()
-        productImage.image = UIImage()
     }
     
-    func willDisplay() {
-        
+    func willDisplay(data: BasketViewModels.BasketModel) {
+        self.ProductNameLabel.text = data.name
+        self.id = data.id
+        self.index = data.index
+        self.totalPriceLabel.text = data.price
+        self.productImage.setImage(imgUrl: data.image)
     }
     
     private func apperance() {
@@ -53,6 +59,6 @@ class BasketCell: UITableViewCell {
     }
     
     @IBAction func tapRemove(_ sender: UIButton) {
-        delegate?.didPressRemove()
+        delegate?.didPressRemove(index: index ?? 0, Id: id ?? 0)
     }
 }

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketViewController" customModule="HepsiEmlakCase" customModuleProvider="target">
             <connections>
+                <outlet property="myBasketTitle" destination="67V-mm-Dxy" id="AsT-WX-5gO"/>
                 <outlet property="tableView" destination="DRm-DI-Lno" id="r4y-BR-4xG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
