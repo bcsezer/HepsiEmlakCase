@@ -59,6 +59,7 @@ enum BasketViewModels {
         struct Response {
         }
         struct ViewModel {
+            let product: BasketModel
         }
     }
     

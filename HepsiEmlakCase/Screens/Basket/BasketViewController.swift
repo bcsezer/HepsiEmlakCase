@@ -54,11 +54,10 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     }
     
     func display(viewModel: BasketViewModels.TapIncrease.ViewModel) {
-        print("indiriyorum")
+        viewModel
     }
     
     func display(viewModel: BasketViewModels.TapDecrease.ViewModel) {
-        print("arttırıyorum")
     }
     
     @IBAction func TapBackButton(_ sender: UIButton) {
