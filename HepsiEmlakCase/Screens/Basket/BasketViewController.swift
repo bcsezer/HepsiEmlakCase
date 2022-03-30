@@ -10,6 +10,8 @@ import UIKit
 protocol BasketViewDisplayLogic {
     func display(viewModel: BasketViewModels.GetBasketList.ViewModel)
     func display(viewModel: BasketViewModels.TapRemove.ViewModel)
+    func display(viewModel: BasketViewModels.TapDecrease.ViewModel)
+    func display(viewModel: BasketViewModels.TapIncrease.ViewModel)
 }
 
 class BasketViewController: UIViewController, BasketViewDisplayLogic {
@@ -51,6 +53,14 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
         tableView.reloadData()
     }
     
+    func display(viewModel: BasketViewModels.TapIncrease.ViewModel) {
+        print("indiriyorum")
+    }
+    
+    func display(viewModel: BasketViewModels.TapDecrease.ViewModel) {
+        print("arttırıyorum")
+    }
+    
     @IBAction func TapBackButton(_ sender: UIButton) {
         router?.routeToBack()
     }
@@ -87,6 +97,14 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BasketViewController: BasketCellDelegate {
+    func didPressIncrease(id: Int) {
+        interactor?.handle(request: BasketViewModels.TapIncrease.Request(id: id))
+    }
+    
+    func didPressDecrease(id: Int) {
+        interactor?.handle(request: BasketViewModels.TapDecrease.Request(id: id))
+    }
+    
     func didPressRemove(index: Int, Id: Int) {
         interactor?.handle(request: BasketViewModels.TapRemove.Request(index: index, id: Id))
     }

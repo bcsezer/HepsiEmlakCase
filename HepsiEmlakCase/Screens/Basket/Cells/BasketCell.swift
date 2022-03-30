@@ -9,6 +9,8 @@ import UIKit
 
 protocol BasketCellDelegate: AnyObject {
     func didPressRemove(index: Int, Id: Int)
+    func didPressIncrease(id: Int)
+    func didPressDecrease(id: Int)
 }
 
 class BasketCell: UITableViewCell {
@@ -60,5 +62,13 @@ class BasketCell: UITableViewCell {
     
     @IBAction func tapRemove(_ sender: UIButton) {
         delegate?.didPressRemove(index: index ?? 0, Id: id ?? 0)
+    }
+    
+    @IBAction func tapDecrease(_ sender: UIButton) {
+        delegate?.didPressDecrease(id: self.id ?? 0)
+    }
+    
+    @IBAction func tapIncrease(_ sender: UIButton) {
+        delegate?.didPressIncrease(id: self.id ?? 0)
     }
 }

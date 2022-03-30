@@ -41,6 +41,27 @@ enum BasketViewModels {
         }
     }
     
+    enum TapDecrease {
+        struct Request {
+            let id: Int
+        }
+        struct Response {
+        }
+        struct ViewModel {
+            
+        }
+    }
+    
+    enum TapIncrease {
+        struct Request {
+            let id: Int
+        }
+        struct Response {
+        }
+        struct ViewModel {
+        }
+    }
+    
     enum BasketViewCell {
         case basketCell(BasketModel)
         

@@ -6,16 +6,39 @@
 //
 
 import Foundation
+import UIKit
 
 struct BasketRepository {
     static var shared = BasketRepository()
     
     let defaults = UserDefaults.standard
     var basketEntity: [BasketEntity] = []
+    var count = 1
     
     //Arttırma fonksiyonu
+    mutating func increaseAmount(selectedProductId: Int) -> [BasketEntity] {
+        
+        var basket = getProducts()
+        
+        let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
+        
+        let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
+        count += 1
+        
+        let firstPrice = stringPrice?.stringToFloat() ?? 0.0
+        let lastPrice = (firstPrice * CGFloat(count)).description
+        
+        if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
+            basket?[index].price = "\(lastPrice) TRY"
+        }
+        
+        return basket ?? []
+    }
     
     //Azaltma Fonksiyonu
+    mutating func decreaseAmount() {
+        
+    }
     
     mutating func checkProductIsInBasket(_ product: ProductsModels.Product?) -> Bool {
         guard

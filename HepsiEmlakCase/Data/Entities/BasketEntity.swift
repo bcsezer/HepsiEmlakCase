@@ -10,7 +10,7 @@ import Foundation
 struct BasketEntity: Codable {
     let id: Int
     let name: String
-    let price: String
+    var price: String
     let image: String
     let currency: String
 }

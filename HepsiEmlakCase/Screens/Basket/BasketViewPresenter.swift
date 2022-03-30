@@ -10,6 +10,8 @@ import Foundation
 protocol BasketViewPrsentationLogic {
     func present(response: BasketViewModels.GetBasketList.Response)
     func present(response: BasketViewModels.TapRemove.Response)
+    func present(response: BasketViewModels.TapIncrease.Response)
+    func present(response: BasketViewModels.TapDecrease.Response)
 }
 
 class BasketViewPresenter: BasketViewPrsentationLogic {
@@ -37,5 +39,13 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
     func present(response: BasketViewModels.TapRemove.Response) {
         let indexPath = IndexPath(row: response.index, section: 0)
         viewController?.display(viewModel: BasketViewModels.TapRemove.ViewModel(indexPath: indexPath))
+    }
+    
+    func present(response: BasketViewModels.TapDecrease.Response) {
+        viewController?.display(viewModel: BasketViewModels.TapDecrease.ViewModel())
+    }
+    
+    func present(response: BasketViewModels.TapIncrease.Response) {
+        viewController?.display(viewModel: BasketViewModels.TapIncrease.ViewModel())
     }
 }
