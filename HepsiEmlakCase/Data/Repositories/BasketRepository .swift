@@ -19,7 +19,6 @@ struct BasketRepository {
         
         var basket = getProducts()
         
-//        let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
         var productCount = basket?.first(where: {$0.id == selectedProductId})?.count ?? 0
         let initialPrice = defaults.object(forKey: "InitialPrice") as? String
         
@@ -46,14 +45,15 @@ struct BasketRepository {
         
         let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
         var productCount = basket?.first(where: {$0.id == selectedProductId})?.count ?? 0
+        let initialPrice = defaults.object(forKey: "InitialPrice") as? String
         
-        let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
+        let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "").stringToFloat() ?? 0.0
+        let stringInitialPrice = initialPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "").stringToFloat() ?? 0.0
         
         productCount -= 1
         
         if productCount >= 1 {
-            let firstPrice = stringPrice?.stringToFloat() ?? 0.0
-            let lastPrice = (firstPrice / CGFloat(productCount)).description
+            let lastPrice = (stringPrice - stringInitialPrice)
             
             if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
                 basket?[index].price = "\(lastPrice) TRY"
