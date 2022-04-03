@@ -20,21 +20,26 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
     func present(response: BasketViewModels.GetBasketList.Response) {
         var cell: [BasketViewModels.BasketViewCell] = []
         
-        for (i, basket) in response.basket.enumerated() {
-            cell.append(
-                .basketCell(
-                    BasketViewModels.BasketModel(
-                        id: basket.id,
-                        name: basket.name,
-                        price: "\(basket.price) \(basket.currency)",
-                        image: basket.image,
-                        index: i,
-                        count: basket.count
+        if !response.basket.isEmpty {
+            for (i, basket) in response.basket.enumerated() {
+                cell.append(
+                    .basketCell(
+                        BasketViewModels.BasketModel(
+                            id: basket.id,
+                            name: basket.name,
+                            price: "\(basket.price) \(basket.currency)",
+                            image: basket.image,
+                            index: i,
+                            count: basket.count
+                        )
                     )
                 )
-            )
+            }
+            viewController?.display(viewModel: BasketViewModels.GetBasketList.ViewModel(cell: cell))
+        } else {
+            cell.append(.emptyCell)
+            viewController?.display(viewModel: BasketViewModels.EmptyList.ViewModel(cell: cell))
         }
-        viewController?.display(viewModel: BasketViewModels.GetBasketList.ViewModel(cell: cell))
     }
     
     func present(response: BasketViewModels.TapRemove.Response) {

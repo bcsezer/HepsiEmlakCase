@@ -12,6 +12,7 @@ protocol BasketViewDisplayLogic {
     func display(viewModel: BasketViewModels.TapRemove.ViewModel)
     func display(viewModel: BasketViewModels.TapDecrease.ViewModel)
     func display(viewModel: BasketViewModels.TapIncrease.ViewModel)
+    func display(viewModel: BasketViewModels.EmptyList.ViewModel)
 }
 
 class BasketViewController: UIViewController, BasketViewDisplayLogic {
@@ -25,11 +26,13 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     
     private struct Constant {
         static let heightForRow: CGFloat = 147.0
+        static let emptyCellHeight: CGFloat = 200.0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         BasketCell.registerWithNib(to: tableView)
+        EmptyBasketCell.registerWithNib(to: tableView)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -66,6 +69,12 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
         tableView.reloadData()
     }
     
+    func display(viewModel: BasketViewModels.EmptyList.ViewModel) {
+        self.basketItems = viewModel.cell
+        tableView.isScrollEnabled = false
+        tableView.reloadData()
+    }
+    
     @IBAction func TapBackButton(_ sender: UIButton) {
         router?.routeToBack()
     }
@@ -78,7 +87,6 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let row = basketItems[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.identifier())
         
@@ -87,6 +95,9 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = cell as? BasketCell else { return UITableViewCell() }
             cell.willDisplay(data: data)
             cell.delegate = self
+            return cell
+        case .emptyCell:
+            guard let cell = cell as? EmptyBasketCell else { return UITableViewCell() }
             return cell
         }
     }
@@ -97,6 +108,8 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         switch row {
         case .basketCell:
             return Constant.heightForRow
+        case .emptyCell:
+            return Constant.emptyCellHeight
         }
     }
 }

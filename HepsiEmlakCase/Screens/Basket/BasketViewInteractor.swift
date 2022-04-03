@@ -20,14 +20,8 @@ class BasketViewInteractor: BasketViewBusinessLogic {
     private let defaults = UserDefaults.standard
     
     func handle(request: BasketViewModels.GetBasketList.Request) {
-        let basket = BasketRepository.shared.getProducts()
-          
-        guard let basketEntity = basket else {
-            presenter?.present(response: BasketViewModels.GetBasketList.Response(basket: []))
-            return
-        }
-        
-        presenter?.present(response: BasketViewModels.GetBasketList.Response(basket: basketEntity))
+        let basket = BasketRepository.shared.getProducts() ?? []
+        presenter?.present(response: BasketViewModels.GetBasketList.Response(basket: basket))
     }
     
     func handle(request: BasketViewModels.TapRemove.Request) {

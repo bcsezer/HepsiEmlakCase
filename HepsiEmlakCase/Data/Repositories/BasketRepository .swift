@@ -91,7 +91,7 @@ struct BasketRepository {
             BasketEntity(
                 id: product.id ?? 0,
                 name: product.name ?? "",
-                price: product.price ?? "",
+                price: "",
                 image: product.image ?? "",
                 currency: "",
                 count: defaultCount

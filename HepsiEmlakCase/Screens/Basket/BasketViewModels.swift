@@ -18,6 +18,17 @@ enum BasketViewModels {
         let count: Int
     }
     
+    struct EmptyList {
+        struct Request {
+        }
+        struct Response {
+            
+        }
+        struct ViewModel {
+            let cell: [BasketViewCell]
+        }
+    }
+    
     enum GetBasketList {
         struct Request {
         }
@@ -70,11 +81,14 @@ enum BasketViewModels {
     
     enum BasketViewCell {
         case basketCell(BasketModel)
+        case emptyCell
         
         func identifier() -> String {
             switch self {
             case .basketCell:
                 return BasketCell.identifier
+            case .emptyCell:
+                return EmptyBasketCell.identifier
             }
         }
     }
