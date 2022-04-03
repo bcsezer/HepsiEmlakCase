@@ -50,16 +50,14 @@ struct BasketRepository {
         
         productCount -= 1
         
-        if productCount == -1 {
-            delete(id: selectedProductId)
-        }
-
-        let firstPrice = stringPrice?.stringToFloat() ?? 0.0
-        let lastPrice = (firstPrice * CGFloat(productCount)).description
-        
-        if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
-            basket?[index].price = "\(lastPrice) TRY"
-            basket?[index].count = productCount
+        if productCount >= 1 {
+            let firstPrice = stringPrice?.stringToFloat() ?? 0.0
+            let lastPrice = (firstPrice / CGFloat(productCount)).description
+            
+            if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
+                basket?[index].price = "\(lastPrice) TRY"
+                basket?[index].count = productCount
+            }
         }
         
         updateList(basket: basket ?? [])
@@ -140,6 +138,7 @@ struct BasketRepository {
         defaults.synchronize()
     }
     
+    // Update Fonksiyonu
     mutating func updateList(basket: [BasketEntity]) {
         do {
             try defaults.setObject(basket, forKey: Keys.key)
