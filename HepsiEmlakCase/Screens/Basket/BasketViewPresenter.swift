@@ -55,14 +55,33 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
             return
         }
         
-        viewController?.display(viewModel: BasketViewModels.TapDecrease.ViewModel(product: BasketViewModels.BasketModel(id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "", price: selectedProduct?.price ?? "", image: selectedProduct?.image ?? "", index: response.index, count: basket?.count ?? 0)))
-    
+        viewController?.display(
+            viewModel: BasketViewModels.TapDecrease.ViewModel(
+                product: BasketViewModels.BasketModel(
+                    id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "",
+                    price: selectedProduct?.price ?? "",
+                    image: selectedProduct?.image ?? "",
+                    index: response.index,
+                    count: basket?.count ?? 0
+                )
+            )
+        )
     }
     
     func present(response: BasketViewModels.TapIncrease.Response) {
         let basket = BasketRepository.shared.getProducts()
         let selectedProduct = basket?[response.index]
         
-        viewController?.display(viewModel: BasketViewModels.TapIncrease.ViewModel(product: BasketViewModels.BasketModel(id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "", price: selectedProduct?.price ?? "", image: selectedProduct?.image ?? "", index: response.index, count: basket?.count ?? 0)))
+        viewController?.display(
+            viewModel: BasketViewModels.TapIncrease.ViewModel(
+                product: BasketViewModels.BasketModel(
+                    id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "",
+                    price: selectedProduct?.price ?? "",
+                    image: selectedProduct?.image ?? "",
+                    index: response.index,
+                    count: basket?.count ?? 0
+                )
+            )
+        )
     }
 }

@@ -71,7 +71,6 @@ class BasketCell: UITableViewCell {
     }
     
     @IBAction func tapIncrease(_ sender: UIButton) {
-        
         delegate?.didPressIncrease(id: self.id ?? 0, Index: index ?? 0)
     }
 }

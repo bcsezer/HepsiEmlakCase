@@ -19,10 +19,11 @@ struct BasketRepository {
         
         var basket = getProducts()
         
-        let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
+//        let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
         var productCount = basket?.first(where: {$0.id == selectedProductId})?.count ?? 0
+        let initialPrice = defaults.object(forKey: "InitialPrice") as? String
         
-        let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
+        let stringPrice = initialPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
         
         productCount += 1
 
@@ -91,7 +92,7 @@ struct BasketRepository {
             BasketEntity(
                 id: product.id ?? 0,
                 name: product.name ?? "",
-                price: "",
+                price: product.price ?? "",
                 image: product.image ?? "",
                 currency: "",
                 count: defaultCount
@@ -99,6 +100,7 @@ struct BasketRepository {
         )
         
         do {
+            defaults.setValue(product.price, forKey: "InitialPrice")
             try defaults.setObject(basket, forKey: Keys.key)
         } catch {
             print(error.localizedDescription)
