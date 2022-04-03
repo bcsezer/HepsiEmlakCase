@@ -15,6 +15,7 @@ enum BasketViewModels {
         let price: String
         let image: String
         let index: Int
+        let count: Int
     }
     
     enum GetBasketList {
@@ -44,19 +45,23 @@ enum BasketViewModels {
     enum TapDecrease {
         struct Request {
             let id: Int
+            let index: Int
         }
         struct Response {
+            let index: Int
         }
         struct ViewModel {
-            
+            let product: BasketModel
         }
     }
     
     enum TapIncrease {
         struct Request {
             let id: Int
+            let index: Int
         }
         struct Response {
+            let index: Int
         }
         struct ViewModel {
             let product: BasketModel

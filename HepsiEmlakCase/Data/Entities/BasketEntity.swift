@@ -13,4 +13,5 @@ struct BasketEntity: Codable {
     var price: String
     let image: String
     let currency: String
+    var count: Int
 }

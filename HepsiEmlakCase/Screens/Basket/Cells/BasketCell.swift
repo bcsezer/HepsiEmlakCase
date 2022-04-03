@@ -9,8 +9,8 @@ import UIKit
 
 protocol BasketCellDelegate: AnyObject {
     func didPressRemove(index: Int, Id: Int)
-    func didPressIncrease(id: Int)
-    func didPressDecrease(id: Int)
+    func didPressIncrease(id: Int, Index: Int)
+    func didPressDecrease(id: Int, Index: Int)
 }
 
 class BasketCell: UITableViewCell {
@@ -29,6 +29,7 @@ class BasketCell: UITableViewCell {
     
     private var index: Int?
     private var id: Int?
+    private var count: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +42,7 @@ class BasketCell: UITableViewCell {
         self.index = data.index
         self.totalPriceLabel.text = data.price
         self.productImage.setImage(imgUrl: data.image)
+        self.amountLabel.text = data.count.string()
     }
     
     private func apperance() {
@@ -65,10 +67,11 @@ class BasketCell: UITableViewCell {
     }
     
     @IBAction func tapDecrease(_ sender: UIButton) {
-        delegate?.didPressDecrease(id: self.id ?? 0)
+        delegate?.didPressDecrease(id: self.id ?? 0, Index: index ?? 0)
     }
     
     @IBAction func tapIncrease(_ sender: UIButton) {
-        delegate?.didPressIncrease(id: self.id ?? 0)
+        
+        delegate?.didPressIncrease(id: self.id ?? 0, Index: index ?? 0)
     }
 }

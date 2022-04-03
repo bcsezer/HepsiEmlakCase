@@ -13,7 +13,6 @@ struct BasketRepository {
     
     let defaults = UserDefaults.standard
     var basketEntity: [BasketEntity] = []
-    var count = 1
     
     //Arttırma fonksiyonu
     mutating func increaseAmount(selectedProductId: Int) -> [BasketEntity] {
@@ -21,23 +20,50 @@ struct BasketRepository {
         var basket = getProducts()
         
         let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
+        var productCount = basket?.first(where: {$0.id == selectedProductId})?.count ?? 0
         
         let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
-        count += 1
         
+        productCount += 1
+
         let firstPrice = stringPrice?.stringToFloat() ?? 0.0
-        let lastPrice = (firstPrice * CGFloat(count)).description
+        let lastPrice = (firstPrice * CGFloat(productCount)).description
         
         if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
             basket?[index].price = "\(lastPrice) TRY"
+            basket?[index].count = productCount
         }
         
+        updateList(basket: basket ?? [])
         return basket ?? []
     }
     
     //Azaltma Fonksiyonu
-    mutating func decreaseAmount() {
+    mutating func decreaseAmount(selectedProductId: Int) -> [BasketEntity] {
         
+        var basket = getProducts()
+        
+        let productPrice = basket?.first(where: {$0.id == selectedProductId})?.price
+        var productCount = basket?.first(where: {$0.id == selectedProductId})?.count ?? 0
+        
+        let stringPrice = productPrice?.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
+        
+        productCount -= 1
+        
+        if productCount == -1 {
+            delete(id: selectedProductId)
+        }
+
+        let firstPrice = stringPrice?.stringToFloat() ?? 0.0
+        let lastPrice = (firstPrice * CGFloat(productCount)).description
+        
+        if let index = basket?.firstIndex(where: {$0.id == selectedProductId}) {
+            basket?[index].price = "\(lastPrice) TRY"
+            basket?[index].count = productCount
+        }
+        
+        updateList(basket: basket ?? [])
+        return basket ?? []
     }
     
     mutating func checkProductIsInBasket(_ product: ProductsModels.Product?) -> Bool {
@@ -61,6 +87,7 @@ struct BasketRepository {
         }
         
         var basket = getProducts()
+        let defaultCount = 1
         
         basket?.append(
             BasketEntity(
@@ -68,7 +95,8 @@ struct BasketRepository {
                 name: product.name ?? "",
                 price: product.price ?? "",
                 image: product.image ?? "",
-                currency: ""
+                currency: "",
+                count: defaultCount
             )
         )
         
@@ -109,6 +137,15 @@ struct BasketRepository {
             print(error.localizedDescription)
         }
         
+        defaults.synchronize()
+    }
+    
+    mutating func updateList(basket: [BasketEntity]) {
+        do {
+            try defaults.setObject(basket, forKey: Keys.key)
+        } catch {
+            print(error.localizedDescription)
+        }
         defaults.synchronize()
     }
 }

@@ -37,10 +37,11 @@ class BasketViewInteractor: BasketViewBusinessLogic {
     
     func handle(request: BasketViewModels.TapIncrease.Request) {
         print(BasketRepository.shared.increaseAmount(selectedProductId: request.id))
-        presenter?.present(response: BasketViewModels.TapIncrease.Response())
+        presenter?.present(response: BasketViewModels.TapIncrease.Response(index: request.index))
     }
     
     func handle(request: BasketViewModels.TapDecrease.Request) {
-        presenter?.present(response: BasketViewModels.TapDecrease.Response())
+        print(BasketRepository.shared.decreaseAmount(selectedProductId: request.id))
+        presenter?.present(response: BasketViewModels.TapDecrease.Response(index: request.index))
     }
 }

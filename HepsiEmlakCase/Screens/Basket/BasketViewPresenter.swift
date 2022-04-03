@@ -28,7 +28,8 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
                         name: basket.name,
                         price: "\(basket.price) \(basket.currency)",
                         image: basket.image,
-                        index: i
+                        index: i,
+                        count: basket.count
                     )
                 )
             )
@@ -42,10 +43,21 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
     }
     
     func present(response: BasketViewModels.TapDecrease.Response) {
-        viewController?.display(viewModel: BasketViewModels.TapDecrease.ViewModel())
+        let basket = BasketRepository.shared.getProducts()
+        let selectedProduct = basket?[response.index]
+        
+        if selectedProduct?.price.stringToFloat() == 0.0 {
+            return
+        }
+        
+        viewController?.display(viewModel: BasketViewModels.TapDecrease.ViewModel(product: BasketViewModels.BasketModel(id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "", price: selectedProduct?.price ?? "", image: selectedProduct?.image ?? "", index: response.index, count: basket?.count ?? 0)))
+    
     }
     
     func present(response: BasketViewModels.TapIncrease.Response) {
-        viewController?.display(viewModel: BasketViewModels.TapIncrease.ViewModel())
+        let basket = BasketRepository.shared.getProducts()
+        let selectedProduct = basket?[response.index]
+        
+        viewController?.display(viewModel: BasketViewModels.TapIncrease.ViewModel(product: BasketViewModels.BasketModel(id: selectedProduct?.id ?? 0, name: selectedProduct?.name ?? "", price: selectedProduct?.price ?? "", image: selectedProduct?.image ?? "", index: response.index, count: basket?.count ?? 0)))
     }
 }

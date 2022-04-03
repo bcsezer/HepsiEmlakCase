@@ -54,10 +54,16 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     }
     
     func display(viewModel: BasketViewModels.TapIncrease.ViewModel) {
-        viewModel
+        interactor?.handle(request: BasketViewModels.GetBasketList.Request())
+        tableView.reloadData()
+//        let indexPath = IndexPath(row: viewModel.product.index, section: 0)
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
+//        tableView.reloadData()
     }
     
     func display(viewModel: BasketViewModels.TapDecrease.ViewModel) {
+        interactor?.handle(request: BasketViewModels.GetBasketList.Request())
+        tableView.reloadData()
     }
     
     @IBAction func TapBackButton(_ sender: UIButton) {
@@ -96,12 +102,12 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BasketViewController: BasketCellDelegate {
-    func didPressIncrease(id: Int) {
-        interactor?.handle(request: BasketViewModels.TapIncrease.Request(id: id))
+    func didPressIncrease(id: Int, Index: Int) {
+        interactor?.handle(request: BasketViewModels.TapIncrease.Request(id: id, index: Index))
     }
     
-    func didPressDecrease(id: Int) {
-        interactor?.handle(request: BasketViewModels.TapDecrease.Request(id: id))
+    func didPressDecrease(id: Int, Index: Int) {
+        interactor?.handle(request: BasketViewModels.TapDecrease.Request(id: id, index: Index))
     }
     
     func didPressRemove(index: Int, Id: Int) {
