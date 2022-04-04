@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol BasketViewPrsentationLogic {
     func present(response: BasketViewModels.GetBasketList.Response)
@@ -35,7 +36,7 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
                     )
                 )
             }
-            viewController?.display(viewModel: BasketViewModels.GetBasketList.ViewModel(cell: cell))
+            viewController?.display(viewModel: BasketViewModels.GetBasketList.ViewModel(totalPrice: calculateTotalPrice(), cell: cell))
         } else {
             cell.append(.emptyCell)
             viewController?.display(viewModel: BasketViewModels.EmptyList.ViewModel(cell: cell))
@@ -83,5 +84,19 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
                 )
             )
         )
+    }
+    
+    private func calculateTotalPrice() -> String {
+        let basketEntity = BasketRepository.shared.getProducts()
+        
+        var totalPrice: CGFloat = 0.0
+        
+        basketEntity?.forEach({ basket in
+            let price = basket.price.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "")
+            
+            totalPrice += price.stringToFloat() ?? 0.0
+        })
+        
+        return totalPrice.description
     }
 }

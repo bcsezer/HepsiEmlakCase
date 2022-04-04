@@ -11,6 +11,7 @@ import Foundation
 
 enum RemoteEndpoint {
     case getProductList
+    case postList
 }
 
 extension RemoteEndpoint: EndpointType {
@@ -23,6 +24,8 @@ extension RemoteEndpoint: EndpointType {
         switch self {
         case .getProductList:
             return "listing"
+        case .postList:
+            return "order"
         }
     }
     
@@ -30,6 +33,8 @@ extension RemoteEndpoint: EndpointType {
         switch self {
         case .getProductList:
             return .get
+        case .postList:
+            return.post
         }
     }
     
@@ -38,8 +43,10 @@ extension RemoteEndpoint: EndpointType {
         case .getProductList:
             return .requestParameters(
                 bodyEncoding: .urlEncoding,
-                urlParameters: nil
+                urlParameters: .none
             )
+        case .postList:
+            return .request
         }
     }
 }

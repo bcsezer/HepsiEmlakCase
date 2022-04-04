@@ -12,6 +12,7 @@ protocol BasketViewBusinessLogic {
     func handle(request: BasketViewModels.TapRemove.Request)
     func handle(request: BasketViewModels.TapIncrease.Request)
     func handle(request: BasketViewModels.TapDecrease.Request)
+    func handle(request: BasketViewModels.TapPlaceOrder.Request)
 }
 
 class BasketViewInteractor: BasketViewBusinessLogic {
@@ -37,5 +38,9 @@ class BasketViewInteractor: BasketViewBusinessLogic {
     func handle(request: BasketViewModels.TapDecrease.Request) {
         print(BasketRepository.shared.decreaseAmount(selectedProductId: request.id))
         presenter?.present(response: BasketViewModels.TapDecrease.Response(index: request.index))
+    }
+    
+    func handle(request: BasketViewModels.TapPlaceOrder.Request) {
+
     }
 }

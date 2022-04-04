@@ -22,4 +22,13 @@ struct NetworkManager {
             failure: failure
         )
     }
+    
+    func postList(completion: @escaping ClosureType<[PostModel]>, failure: @escaping Failure) {
+        provider.request(
+            .postList,
+            model: [PostModel].self,
+            completion: completion,
+            failure: failure
+        )
+    }
 }

@@ -36,6 +36,7 @@ enum BasketViewModels {
             let basket: [BasketEntity]
         }
         struct ViewModel {
+            let totalPrice: String
             let cell: [BasketViewCell]
         }
     }
@@ -76,6 +77,15 @@ enum BasketViewModels {
         }
         struct ViewModel {
             let product: BasketModel
+        }
+    }
+    
+    enum TapPlaceOrder {
+        struct Request {
+        }
+        struct Response {
+        }
+        struct ViewModel {
         }
     }
     

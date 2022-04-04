@@ -60,6 +60,7 @@
 		B2F6979C27F397F10032C3F4 /* Userdefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6979B27F397F10032C3F4 /* Userdefaults+Extensions.swift */; };
 		B2F697D327FA321E0032C3F4 /* EmptyBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F697D127FA321E0032C3F4 /* EmptyBasketCell.swift */; };
 		B2F697D427FA321E0032C3F4 /* EmptyBasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F697D227FA321E0032C3F4 /* EmptyBasketCell.xib */; };
+		B2F697DA27FB385B0032C3F4 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F697D927FB385B0032C3F4 /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		B2F6979B27F397F10032C3F4 /* Userdefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Extensions.swift"; sourceTree = "<group>"; };
 		B2F697D127FA321E0032C3F4 /* EmptyBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasketCell.swift; sourceTree = "<group>"; };
 		B2F697D227FA321E0032C3F4 /* EmptyBasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyBasketCell.xib; sourceTree = "<group>"; };
+		B2F697D927FB385B0032C3F4 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		B3F4FEC9FDA5D2C205F47B9D /* Pods-HepsiEmlakCaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCaseTests.release.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCaseTests/Pods-HepsiEmlakCaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C5EE11C974428D7F8F659263 /* Pods-HepsiEmlakCaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCaseTests.debug.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCaseTests/Pods-HepsiEmlakCaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C607A749A688737BCA6B71E8 /* Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F6978B27F317DF0032C3F4 /* ProductEntity.swift */,
+				B2F697D927FB385B0032C3F4 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				B2F6979C27F397F10032C3F4 /* Userdefaults+Extensions.swift in Sources */,
 				B2F6978E27F31A2E0032C3F4 /* Styles.swift in Sources */,
 				B2F6973427F080F40032C3F4 /* String+Extensions.swift in Sources */,
+				B2F697DA27FB385B0032C3F4 /* PostModel.swift in Sources */,
 				B2F6979627F32A820032C3F4 /* ActivityManagerView.swift in Sources */,
 				B2F6976927F259D50032C3F4 /* Images.swift in Sources */,
 				B2F6975227F1E5E70032C3F4 /* BasketCell.swift in Sources */,

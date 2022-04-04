@@ -21,6 +21,7 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myBasketTitle: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
     
     var basketItems: [BasketViewModels.BasketViewCell] = []
     
@@ -42,9 +43,15 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
         interactor?.handle(request: BasketViewModels.GetBasketList.Request())
     }
     
+    @IBAction func tapPlaceOrder(_ sender: UIButton) {
+        
+    }
+    
+    
     func display(viewModel: BasketViewModels.GetBasketList.ViewModel) {
         self.basketItems = viewModel.cell
         myBasketTitle.text = "Sepetim (\(basketItems.count))"
+        totalPrice.text = viewModel.totalPrice
         self.tableView.reloadData()
     }
     
