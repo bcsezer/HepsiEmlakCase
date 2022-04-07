@@ -58,6 +58,18 @@ enum ProductsModels {
         }
     }
     
+    enum TapImage {
+        struct Request {
+            let image: String
+        }
+        struct Response {
+            let image: String
+        }
+        struct ViewModel {
+            let image: String
+        }
+    }
+    
     enum Cell {
         case productCell(Product)
         

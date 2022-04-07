@@ -11,6 +11,7 @@ import UIKit
 
 protocol ProductsRoutingLogic {
     func routeToChart()
+    func routeToDetail(productImage: String)
 }
 
 class ProductsRouter: NSObject, ProductsRoutingLogic {
@@ -21,5 +22,10 @@ class ProductsRouter: NSObject, ProductsRoutingLogic {
     func routeToChart() {
         let basketVC = ViewControllerFactory.sharedInstance.makeBasketViewController()
         viewController?.navigationController?.pushViewController(basketVC, animated: true)
+    }
+    
+    func routeToDetail(productImage: String) {
+        let productDetailVC = ViewControllerFactory.sharedInstance.makeProductDetailViewController(productImage: productImage)
+        viewController?.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }

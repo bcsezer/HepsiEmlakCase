@@ -44,8 +44,14 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
     }
     
     func present(response: BasketViewModels.TapRemove.Response) {
+        var totalPrice: CGFloat = 0.0
+        
+        response.basket.forEach { basket in
+            totalPrice += basket.price.stringToFloat() ?? 0.0
+        }
+        
         let indexPath = IndexPath(row: response.index, section: 0)
-        viewController?.display(viewModel: BasketViewModels.TapRemove.ViewModel(indexPath: indexPath))
+        viewController?.display(viewModel: BasketViewModels.TapRemove.ViewModel(indexPath: indexPath, totalPrice: totalPrice.description))
     }
     
     func present(response: BasketViewModels.TapDecrease.Response) {

@@ -12,6 +12,7 @@ protocol ProductsViewDisplayLogic {
     func display(viewModel: ProductsModels.TapAddToChart.ViewModel)
     func display(viewModel: ProductsModels.EmptyResult.ViewModel)
     func display(viewModel: ProductsModels.ProductExistError.ViewModel)
+    func display(viewModel: ProductsModels.TapImage.ViewModel)
 }
 
 class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
@@ -75,10 +76,13 @@ class ProductsViewController: UIViewController, ProductsViewDisplayLogic {
         showAlert(withTitle: "Uyarı", withMessage: viewModel.message)
     }
     
+    func display(viewModel: ProductsModels.TapImage.ViewModel) {
+        router?.routeToDetail(productImage: viewModel.image)
+    }
+    
     @IBAction func tapToChart(_ sender: Any) {
         router?.routeToChart()
     }
-    
 }
 
 extension ProductsViewController: ProductCellDelegate {
@@ -108,6 +112,14 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = cell as? ProductCell else { return }
             cell.willDisplay(data: data)
             cell.delegate = self
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = productsList[indexPath.row]
+        switch data {
+        case .productCell(let data):
+            interactor?.handle(request: ProductsModels.TapImage.Request(image: data.image ?? ""))
         }
     }
     

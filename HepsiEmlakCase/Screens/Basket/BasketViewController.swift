@@ -90,9 +90,8 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     func display(viewModel: BasketViewModels.TapRemove.ViewModel) {
         self.basketItems.remove(at: viewModel.indexPath.row)
         myBasketTitle.text = "Sepetim (\(basketItems.count))"
-        
         self.tableView.deleteRows(at: [viewModel.indexPath], with: .fade)
-        tableView.reloadData()
+        totalPrice.text = viewModel.totalPrice
     }
     
     func display(viewModel: BasketViewModels.TapIncrease.ViewModel) {

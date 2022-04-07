@@ -27,7 +27,8 @@ class BasketViewInteractor: BasketViewBusinessLogic {
     
     func handle(request: BasketViewModels.TapRemove.Request) {
         BasketRepository.shared.delete(id: request.id)
-        presenter?.present(response: BasketViewModels.TapRemove.Response(index: request.index))
+        let basket = BasketRepository.shared.getProducts() ?? []
+        presenter?.present(response: BasketViewModels.TapRemove.Response(index: request.index, basket: basket))
     }
     
     func handle(request: BasketViewModels.TapIncrease.Request) {

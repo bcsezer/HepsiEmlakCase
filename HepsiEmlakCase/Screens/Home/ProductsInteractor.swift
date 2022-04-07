@@ -10,6 +10,7 @@ import Foundation
 protocol ProductsViewBusinessLogic {
     func handle(request: ProductsModels.GetProducts.Request)
     func handle(request: ProductsModels.TapAddToChart.Request)
+    func handle(request: ProductsModels.TapImage.Request)
 }
 
 class ProductsInteractor: ProductsViewBusinessLogic {
@@ -43,5 +44,9 @@ class ProductsInteractor: ProductsViewBusinessLogic {
         } else {
             presenter?.present(response: ProductsModels.ProductExistError.Response(message: "Seçili Ürün Daha Önce Sepete Eklendi."))
         }
+    }
+    
+    func handle(request: ProductsModels.TapImage.Request) {
+        presenter?.present(response: ProductsModels.TapImage.Response(image: request.image))
     }
 }

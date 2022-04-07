@@ -10,6 +10,11 @@
 		0E4678E5942380984C68060D /* Pods_HepsiEmlakCase_HepsiEmlakCaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F177BD89D4567360A7A1079 /* Pods_HepsiEmlakCase_HepsiEmlakCaseUITests.framework */; };
 		4D66335C9A03F537595C18DC /* Pods_HepsiEmlakCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26BBAA537081FC09C30600C /* Pods_HepsiEmlakCase.framework */; };
 		7279E11520BA47DF4603C4E4 /* Pods_HepsiEmlakCaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C15F1D585B72CBFC7034EB7 /* Pods_HepsiEmlakCaseTests.framework */; };
+		B254286227FF01140097D0D9 /* ProductDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254286127FF01140097D0D9 /* ProductDetailInteractor.swift */; };
+		B254286427FF01210097D0D9 /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254286327FF01210097D0D9 /* ProductDetailPresenter.swift */; };
+		B254286727FF01350097D0D9 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254286527FF01350097D0D9 /* ProductDetailViewController.swift */; };
+		B254286827FF01350097D0D9 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B254286627FF01350097D0D9 /* ProductDetailViewController.xib */; };
+		B254286A27FF01410097D0D9 /* ProductDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254286927FF01410097D0D9 /* ProductDetailModels.swift */; };
 		B2F696EB27F077C90032C3F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F696EA27F077C90032C3F4 /* AppDelegate.swift */; };
 		B2F696ED27F077C90032C3F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */; };
 		B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F696F327F077CA0032C3F4 /* Assets.xcassets */; };
@@ -85,6 +90,11 @@
 		0F177BD89D4567360A7A1079 /* Pods_HepsiEmlakCase_HepsiEmlakCaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HepsiEmlakCase_HepsiEmlakCaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C15F1D585B72CBFC7034EB7 /* Pods_HepsiEmlakCaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HepsiEmlakCaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C58CB98B22BA29AF6829B3 /* Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests/Pods-HepsiEmlakCase-HepsiEmlakCaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B254286127FF01140097D0D9 /* ProductDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractor.swift; sourceTree = "<group>"; };
+		B254286327FF01210097D0D9 /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		B254286527FF01350097D0D9 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		B254286627FF01350097D0D9 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		B254286927FF01410097D0D9 /* ProductDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModels.swift; sourceTree = "<group>"; };
 		B2F696E727F077C90032C3F4 /* HepsiEmlakCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HepsiEmlakCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F696EA27F077C90032C3F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F696EC27F077C90032C3F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +197,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B254285E27FF00F10097D0D9 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B254286127FF01140097D0D9 /* ProductDetailInteractor.swift */,
+				B254286327FF01210097D0D9 /* ProductDetailPresenter.swift */,
+				B254286527FF01350097D0D9 /* ProductDetailViewController.swift */,
+				B254286627FF01350097D0D9 /* ProductDetailViewController.xib */,
+				B254286927FF01410097D0D9 /* ProductDetailModels.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
 		B2F696DE27F077C90032C3F4 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +275,7 @@
 		B2F6971F27F079640032C3F4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B254285E27FF00F10097D0D9 /* ProductDetail */,
 				B2F6973F27F192C90032C3F4 /* Basket */,
 				B2F6972B27F07F240032C3F4 /* Home */,
 			);
@@ -560,6 +583,7 @@
 				B2F6975327F1E5E70032C3F4 /* BasketCell.xib in Resources */,
 				B2F6973227F07FDF0032C3F4 /* ProductCell.xib in Resources */,
 				B2F697D427FA321E0032C3F4 /* EmptyBasketCell.xib in Resources */,
+				B254286827FF01350097D0D9 /* ProductDetailViewController.xib in Resources */,
 				B2F696F427F077CA0032C3F4 /* Assets.xcassets in Resources */,
 				B2F6974527F1D8820032C3F4 /* BasketViewController.xib in Resources */,
 				B2F6971E27F0795F0032C3F4 /* ProductsViewController.xib in Resources */,
@@ -699,17 +723,20 @@
 				B2F6976927F259D50032C3F4 /* Images.swift in Sources */,
 				B2F6975227F1E5E70032C3F4 /* BasketCell.swift in Sources */,
 				B2F6978327F2737D0032C3F4 /* NetworkProvider.swift in Sources */,
+				B254286227FF01140097D0D9 /* ProductDetailInteractor.swift in Sources */,
 				B2F6973927F08CA20032C3F4 /* Colors.swift in Sources */,
 				B2F6974427F1D8820032C3F4 /* BasketViewController.swift in Sources */,
 				B2F6978527F273E80032C3F4 /* EndpointType.swift in Sources */,
 				B2F6977127F265B90032C3F4 /* ToastMessage.swift in Sources */,
 				B2F6978127F2735C0032C3F4 /* RemoteEndpoint.swift in Sources */,
+				B254286727FF01350097D0D9 /* ProductDetailViewController.swift in Sources */,
 				B2F6972527F0799E0032C3F4 /* ProductsModels.swift in Sources */,
 				B2F6979A27F379DD0032C3F4 /* Keys.swift in Sources */,
 				B2F6974D27F1E1860032C3F4 /* BasketViewModels.swift in Sources */,
 				B2F6972A27F07B350032C3F4 /* ViewControllerFactory.swift in Sources */,
 				B2F6979127F31B450032C3F4 /* StylesHelper.swift in Sources */,
 				B2F6975D27F23FC10032C3F4 /* ProductsRouter.swift in Sources */,
+				B254286427FF01210097D0D9 /* ProductDetailPresenter.swift in Sources */,
 				B2F6978927F3175E0032C3F4 /* RemoteEntities.swift in Sources */,
 				B2F6974927F1E1700032C3F4 /* BasketViewInteractor.swift in Sources */,
 				B2F6979827F3794A0032C3F4 /* BasketEntity.swift in Sources */,
@@ -729,6 +756,7 @@
 				B2F6972327F079940032C3F4 /* ProductsPresenter.swift in Sources */,
 				B2F6977E27F2731B0032C3F4 /* URLQueryEncoder.swift in Sources */,
 				B2F697D327FA321E0032C3F4 /* EmptyBasketCell.swift in Sources */,
+				B254286A27FF01410097D0D9 /* ProductDetailModels.swift in Sources */,
 				B2F6977827F26F720032C3F4 /* NetworkManager.swift in Sources */,
 				B2F6974727F1DA4C0032C3F4 /* ViewController+Extensions.swift in Sources */,
 				B2F6977527F26A430032C3F4 /* BasketRepository .swift in Sources */,

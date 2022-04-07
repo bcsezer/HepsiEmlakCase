@@ -48,9 +48,11 @@ enum BasketViewModels {
         }
         struct Response {
             let index: Int
+            let basket: [BasketEntity]
         }
         struct ViewModel {
             let indexPath: IndexPath
+            let totalPrice: String
         }
     }
     

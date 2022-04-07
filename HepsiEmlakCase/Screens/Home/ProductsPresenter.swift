@@ -12,6 +12,7 @@ protocol ProductsViewPresentationLogic {
     func present(response: ProductsModels.TapAddToChart.Response)
     func present(response: ProductsModels.EmptyResult.Response)
     func present(response: ProductsModels.ProductExistError.Response)
+    func present(response: ProductsModels.TapImage.Response)
 }
 
 class ProductsPresenter: ProductsViewPresentationLogic {
@@ -51,5 +52,9 @@ class ProductsPresenter: ProductsViewPresentationLogic {
     
     func present(response: ProductsModels.ProductExistError.Response) {
         viewController?.display(viewModel: ProductsModels.ProductExistError.ViewModel(message: response.message))
+    }
+    
+    func present(response: ProductsModels.TapImage.Response) {
+        viewController?.display(viewModel: ProductsModels.TapImage.ViewModel(image: response.image))
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 protocol ViewControllerFactoryProtocol {
     func makeProductsViewController() -> UIViewController
     func makeBasketViewController() -> UIViewController
+    func makeProductDetailViewController(productImage: String) -> UIViewController
 }
 
 struct ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -43,4 +44,16 @@ struct ViewControllerFactory: ViewControllerFactoryProtocol {
     
         return viewController
     }
+    
+    func makeProductDetailViewController(productImage: String) -> UIViewController {
+        let viewController = ProductDetailViewController(nibName: "ProductDetailViewController", bundle: nil)
+        let interactor = ProductDetailInteractor()
+        let presenter = ProductDetailPresenter()
+        interactor.presenter = presenter
+        interactor.image = productImage
+        presenter.viewController = viewController
+        viewController.interactor = interactor
+        return viewController
+    }
+
 }
