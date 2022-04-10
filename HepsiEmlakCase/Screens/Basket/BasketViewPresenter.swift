@@ -47,7 +47,7 @@ class BasketViewPresenter: BasketViewPrsentationLogic {
         var totalPrice: CGFloat = 0.0
         
         response.basket.forEach { basket in
-            totalPrice += basket.price.stringToFloat() ?? 0.0
+            totalPrice += basket.price.replacingOccurrences(of: "TRY", with: "").replacingOccurrences(of: " ", with: "").stringToFloat() ?? 0.0
         }
         
         let indexPath = IndexPath(row: response.index, section: 0)

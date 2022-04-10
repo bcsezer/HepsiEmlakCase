@@ -27,7 +27,7 @@ class BasketCell: UITableViewCell {
     
     weak var delegate: BasketCellDelegate?
     
-    private var index: Int?
+    var index: Int?
     private var id: Int?
     private var count: Int?
     
@@ -39,7 +39,6 @@ class BasketCell: UITableViewCell {
     func willDisplay(data: BasketViewModels.BasketModel) {
         self.ProductNameLabel.text = data.name
         self.id = data.id
-        self.index = data.index
         self.totalPriceLabel.text = data.price
         self.productImage.setImage(imgUrl: data.image)
         self.amountLabel.text = data.count.string()

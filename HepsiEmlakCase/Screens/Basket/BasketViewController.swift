@@ -82,7 +82,7 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
     func display(viewModel: BasketViewModels.GetBasketList.ViewModel) {
         self.basketItems = viewModel.cell
         myBasketTitle.text = "Sepetim (\(basketItems.count))"
-        totalPrice.text = viewModel.totalPrice
+        totalPrice.text = viewModel.totalPrice.appending(" TL")
         placeOrderView.isHidden = false
         self.tableView.reloadData()
     }
@@ -91,15 +91,13 @@ class BasketViewController: UIViewController, BasketViewDisplayLogic {
         self.basketItems.remove(at: viewModel.indexPath.row)
         myBasketTitle.text = "Sepetim (\(basketItems.count))"
         self.tableView.deleteRows(at: [viewModel.indexPath], with: .fade)
-        totalPrice.text = viewModel.totalPrice
+        totalPrice.text = viewModel.totalPrice.appending(" TL")
+        tableView.reloadData()
     }
     
     func display(viewModel: BasketViewModels.TapIncrease.ViewModel) {
         interactor?.handle(request: BasketViewModels.GetBasketList.Request())
         tableView.reloadData()
-//        let indexPath = IndexPath(row: viewModel.product.index, section: 0)
-//        tableView.reloadRows(at: [indexPath], with: .automatic)
-//        tableView.reloadData()
     }
     
     func display(viewModel: BasketViewModels.TapDecrease.ViewModel) {
@@ -133,6 +131,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         case .basketCell(let data):
             guard let cell = cell as? BasketCell else { return UITableViewCell() }
             cell.willDisplay(data: data)
+            cell.index = indexPath.row
             cell.delegate = self
             return cell
         case .emptyCell:
